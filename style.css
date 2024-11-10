@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    color: #3a3839;
+    font-family: "Quicksand", sans-serif;
+    margin: 0;
+    margin-top: 160px;
+    background-image: url("bg.png");
+    font-weight: normal;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 210px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.207);
+    height: 120px;
+    z-index: 1000;
+}
+
+.navbarButton {
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1.5s ease, transform 0.5s ease;
+    margin: 0 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: lighter;
+    letter-spacing: 5px;
+}
+
+.logo {
+    aspect-ratio: 1.7379;
+    height: 120px;
+    z-index: 1; /* Ensure logo stays on top of the navbar buttons */
+    position: absolute;
+    transition: transform 0.5s ease;
+}
+
+/* Optional: Add some padding or margins to space out the buttons nicely */
+.navbarButton h1 {
+    padding: 10px 20px;
+}
+
+.header {
+    letter-spacing: 2px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.image {
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: scale 0.2s;
+    scale: 1;
+}
+
+.image:hover {
+    scale: 1.05;
+}
+
+.decriptionBox {
+    border-radius: 5px;
+    padding: 20px 0;
+    width: 500px;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 5px;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.available {
+    color: green;
+    font-weight: 500;
+}
+
+.available a {
+    color: green;
+    text-decoration: none;
+}
+
+.soldOut {
+    color: rgb(186, 0, 96);
+    font-weight: 500;
+}
+
+.soldOut:hover {
+    cursor: not-allowed;
+}

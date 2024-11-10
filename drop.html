@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=600px">
+    <title>Hooked by Nell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <a href="/" class="navbarButton">
+                <h2 style="font-weight: 600;">HOME</h2>
+            </a>
+            <a href="drop.html" class="navbarButton">
+                <h2 style="font-weight: 600;">DROP 1</h2>
+            </a>
+            <a href="about.html" class="navbarButton">
+                <h2 style="font-weight: 600;">ABOUT</h2>
+            </a>
+        </div>
+        <script src="navbar.js"></script>
+    </header>
+
+    <h2 style="text-align: center;">DROP 1 - BUBBLE BAG</h2>
+    <br>
+
+    <div class="grid">
+        <img src="drop1/1.png" class="image">
+        <div class="decriptionBox">
+            <h1>Pink Bubble Bag</h1>
+            <h2>180zł</h2>
+            <h2 class="soldOut">Sold Out</h2>
+        </div>
+        
+        <img src="drop1/3.png" class="image">
+        <div class="decriptionBox">
+            <h1>Gray Bubble Bag</h1>
+            <h2>160zł</h2>
+            <h2 class="available"><a href="https://allegro.pl">Buy Now</a></h2>
+        </div>
+
+        <img src="drop1/3.png" class="image">
+        <div class="decriptionBox">
+            <h1>Gray Bubble Bag</h1>
+            <h2>160zł</h2>
+            <h2 class="available"><a href="https://allegro.pl">Buy Now</a></h2>
+        </div>
+
+        <img src="drop1/3.png" class="image">
+        <div class="decriptionBox">
+            <h1>Gray Bubble Bag</h1>
+            <h2>160zł</h2>
+            <h2 class="available"><a href="https://allegro.pl">Buy Now</a></h2>
+        </div>
+    </div>
+    <script>
+        // Function to update grid layout based on screen width
+        function updateGridLayout() {
+            const gridItems = document.querySelectorAll('.grid > div, .grid > img'); // Select both image and description boxes
+            const gridContainer = document.querySelector('.grid');
+
+            if (window.innerWidth >= 1060) {
+                gridItems.forEach(item => {
+                    item.style.order = ''; // Reset order to default
+                });
+                // Set order so that images and description alternate
+                let orderValue = 0;
+                let i = 0;
+                let goBack = false;
+                gridItems.forEach(item => {
+                    item.style.order = orderValue;
+                    if ((i + 1) % 4 == 0) item.style.textAlign = "end";
+                    else item.style.textAlign = "start";
+                    if (i % 4 == 0) orderValue++;
+                    else orderValue -= 2;
+
+                    i++;
+                });
+            } else {
+                gridItems.forEach(item => {
+                    item.style.textAlign = "start";
+                    item.style.order = ''; // Reset to default (no specific order)
+                });
+            }
+        }
+
+        // Call the function on page load
+        updateGridLayout();
+
+        // Add event listener to adjust layout on window resize
+        window.addEventListener('resize', updateGridLayout);
+
+    </script>
+</body>
+</html>
