@@ -1,12 +1,16 @@
 const navbar = document.getElementsByClassName("navbar")[0];
 const navbarButtons = document.getElementsByClassName("navbarButton");
 const logo = document.getElementsByClassName("logo")[0];
+const bars = document.getElementsByClassName("bars")[0];
 
 // Set initial state of navbar buttons (hidden and positioned below)
 Array.from(navbarButtons).forEach(button => {
     button.style.opacity = '0';
     button.style.transform = 'translateY(-120px)';
 });
+
+if (window.innerWidth > 1200) bars.style.left = "-1000px";
+else bars.style.left = "30px";
 
 // On mouseover, show buttons, move logo back, and reposition it
 navbar.addEventListener("mouseover", function() {
@@ -24,6 +28,9 @@ navbar.addEventListener("mouseover", function() {
         logo.style.transform = 'translateX(calc(-50vw - 120px))';
         navbar.style.padding = "0 10px";
     }
+    bars.style.opacity = "0";
+    if (window.innerWidth > 1200) bars.style.left = "-1000px";
+    else bars.style.left = "30px";
 });
 
 // On mouseout, hide buttons, move logo to center, and reset positions
@@ -37,4 +44,7 @@ navbar.addEventListener("mouseout", function() {
     // On mouseout, center the logo
     logo.style.transform = 'translateX(0)'; // Move logo to the center of the navbar
     navbar.style.justifyContent = 'space-evenly'; // Center the logo and hide the buttons
+    bars.style.opacity = "1";
+    if (window.innerWidth > 1200) bars.style.left = "-1000px";
+    else bars.style.left = "30px";
 });

@@ -45,6 +45,16 @@ body {
     transition: transform 0.5s ease;
 }
 
+.bars {
+    aspect-ratio: 1;
+    height: 60px;
+    z-index: 2;
+    top: 30px;
+    left: 30px;
+    position: absolute;
+    transition: opacity 0.2s ease;
+}
+
 /* Optional: Add some padding or margins to space out the buttons nicely */
 .navbarButton h1 {
     padding: 10px 20px;
@@ -76,7 +86,7 @@ body {
     scale: 1.05;
 }
 
-.decriptionBox {
+.descriptionBox {
     border-radius: 5px;
     padding: 20px 0;
     width: 500px;
@@ -87,7 +97,6 @@ body {
     gap: 5px;
     font-family: "Montserrat", sans-serif;
 }
-
 
 .available {
     color: green;
