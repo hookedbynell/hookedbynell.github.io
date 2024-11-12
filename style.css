@@ -45,6 +45,7 @@ body {
     transition: transform 0.5s ease;
 }
 
+
 .bars {
     aspect-ratio: 1;
     height: 60px;
